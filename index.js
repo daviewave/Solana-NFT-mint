@@ -72,3 +72,15 @@ await mint.setAuthority(
   fromWallet.publicKey,
   []
 );
+
+// Add token transfer instructions to transaction
+var transaction = new web3.Transaction().add(
+  splToken.Token.createTransferInstruction(
+    splToken.TOKEN_PROGRAM_ID,
+    fromTokenAccount.address,
+    toTokenAccount.address,
+    fromWallet.publicKey,
+    [],
+    1
+  )
+);
