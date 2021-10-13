@@ -40,3 +40,8 @@ let mint = await splToken.Token.createMint(
   9,
   splToken.TOKEN_PROGRAM_ID
 );
+
+//get the token account of the fromWallet Solana address, if it does not exist, create it
+let fromTokenAccount = await mint.getOrCreateAssociatedAccountInfo(
+  fromWallet.publicKey
+);
