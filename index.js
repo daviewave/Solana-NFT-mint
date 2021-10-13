@@ -13,3 +13,12 @@ async () => {
 };
 
 /*2. CREATING THE NFT */
+//Generate a new wallet keypair and airdrop SOL the specified amount of Sol tokens being used to mint the particular NFT
+var fromWallet = web3.Keypair.generate();
+var fromAirdropSignature = await connection.requestAirdrop(
+  fromWallet.publicKey,
+  web3.LAMPORTS_PER_SOL
+);
+
+//Pauses and waits to ensure the airdrop is confirmed
+await connection.confirmTransaction(fromAirdropSignature);
