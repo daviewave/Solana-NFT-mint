@@ -12,7 +12,7 @@ async () => {
   );
 };
 
-/*2. CREATING THE NFT */
+/*2.a CREATING THE NFT */
 //Generate a new wallet keypair and airdrop SOL the specified amount of Sol tokens being used to mint the particular NFT
 var fromWallet = web3.Keypair.generate();
 var fromAirdropSignature = await connection.requestAirdrop(
@@ -44,4 +44,13 @@ let mint = await splToken.Token.createMint(
 //get the token account of the fromWallet Solana address, if it does not exist, create it
 let fromTokenAccount = await mint.getOrCreateAssociatedAccountInfo(
   fromWallet.publicKey
+);
+
+/*2.b. NEED A SOLANA ACCOUNT TO SEND THE MINTED NFT TOO*/
+//Generates a new wallet to recieve the minted NFT tokens
+var toWallet = web3.Keypair.generate();
+
+//gets the token account of the toWallet Solana address, if it does not exist, create it
+var toTokenAccount = await mint.getOrCreateAssociatedAccountInfo(
+  toWallet.publicKey
 );
