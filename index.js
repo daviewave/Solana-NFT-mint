@@ -84,3 +84,12 @@ var transaction = new web3.Transaction().add(
     1
   )
 );
+
+// Sign transaction, broadcast, and confirm
+var signature = await web3.sendAndConfirmTransaction(
+  connection,
+  transaction,
+  [fromWallet],
+  { commitment: "confirmed" }
+);
+console.log("SIGNATURE", signature);
