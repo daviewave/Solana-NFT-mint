@@ -54,3 +54,12 @@ var toWallet = web3.Keypair.generate();
 var toTokenAccount = await mint.getOrCreateAssociatedAccountInfo(
   toWallet.publicKey
 );
+
+/*3. MINTING THE NFT*/
+//mints 1 new token to the "fromTokenAccount" account we just returned/created
+await mint.mintTo(
+  fromTokenAccount.address, //who it goes to
+  fromWallet.publicKey, // minting authority
+  [], // multisig
+  1000000000 // how many
+);
