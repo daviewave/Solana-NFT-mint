@@ -22,3 +22,21 @@ var fromAirdropSignature = await connection.requestAirdrop(
 
 //Pauses and waits to ensure the airdrop is confirmed
 await connection.confirmTransaction(fromAirdropSignature);
+
+//Use the airdropped tokens to create new token mint
+/*Arguments:
+    1. The connection to the Solana Network. (connection)
+    2. The account that will pay the fee. (fromWallet) 
+    3. The public key of the account that has the authority to mint tokens of this type. (fromWallet.publicKey) 
+    4. The public key of the account that has the authority to freeze tokens of this type. This argument is optional. (null)
+    5. Amount of decimal places for your token. Most Solana tokens have 9 decimal places. 
+    6. The program id of the token --> The program's account's owner specifies which loader should be used to load and execute the program and the data contains information about how the runtime should execute the program.
+*/
+let mint = await splToken.Token.createMint(
+  connection,
+  fromWallet,
+  fromWallet.publicKey,
+  null,
+  9,
+  splToken.TOKEN_PROGRAM_ID
+);
