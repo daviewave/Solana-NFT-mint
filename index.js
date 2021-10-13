@@ -63,3 +63,12 @@ await mint.mintTo(
   [], // multisig
   1000000000 // how many
 );
+
+//waits for confirmation of the authority then mints public keys
+await mint.setAuthority(
+  mint.publicKey,
+  null,
+  "MintTokens",
+  fromWallet.publicKey,
+  []
+);
