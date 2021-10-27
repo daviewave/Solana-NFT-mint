@@ -141,3 +141,10 @@ body {
 #faq-container {
   visibility: hidden;
 }
+
+.wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
