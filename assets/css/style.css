@@ -6,6 +6,38 @@
 	scroll-behavior: smooth;
 }
 
+#home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #859398;
+  margin: 10px 10px 10px 10px;
+}
+
+#home-page-left-column {
+  background-color: lightgrey;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Sets the default visibilt for all non-home page containers */
+#about-container {
+  visibility: hidden;
+}
+
+#rarity-container {
+  visibility: hidden;
+}
+
+#roadmap-container {
+  visibility: hidden;
+}
+
+#faq-container {
+  visibility: hidden;
+}
+
 body {
 	background-color: #fff;
 }
