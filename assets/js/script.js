@@ -237,7 +237,7 @@ function addImageToNFTcard($imgDiv) {
   //add image to $imageDiv
   var $curNFTimage = $("<img>");
   $curNFTimage.attr("id", "card-image"); //Gonna Need
-  $curNFTimage.attr("src", "assets/images/card-placeholder.jpg");
+  $curNFTimage.attr("src", "assets/images/card-placeholder2.jpg");
   $curNFTimage.attr("alt", "NFT-Placeholder Image");
   $curNFTimage.addClass("card-img");
 
