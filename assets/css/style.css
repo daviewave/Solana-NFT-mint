@@ -224,6 +224,13 @@ body {
   padding: 10px;
 }
 
+.center-horizontal {
+  margin: auto;
+  width: 60%;
+  border: 5px solid #ffff00;
+  padding: 10px;
+}
+
 #rarity-container-h1 {
   /* Need this to be centered and in the middle of the div i created for it */
   display: flex;
@@ -235,6 +242,21 @@ body {
   width: 70%;
 }
 
+#NFT-cards-container {
+  /* Need this to be centered and in the middle of the div i created for it */
+  display: block;
+  /* display: flex;
+  justify-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 5px solid black;
+  width: 90%;
+}
+
 .card-max-width {
-  max-width: 540px;
+  width: 95%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
