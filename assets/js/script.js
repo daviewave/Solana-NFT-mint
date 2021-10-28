@@ -145,10 +145,76 @@ function createRaritySection() {
   $rarityContainerDiv.append($rarityHeader);
 
   //5th going to need to add a 'card' for each NFT we have -- TODO: WRITE FUNCTION TO THAT CAN 'ADD' CARDS
-  //createNFTDisplayCards()
+  createNFTDisplayCards();
 
   //FINAL: append rarityContainerDiv to the $container passed in
   $targetMainContainer.append($rarityContainerDiv);
+}
+
+//TODO: WRITE FUNCTION THAT CAN 'ADD' CARDS
+function createNFTDisplayCards() {
+  //gonna need to loop through the total number of NFTs
+  for (var i = 0; i < numNFTs; i++) {
+    //Biggest div -- is full card, will append all other divs
+    var $NFTcardDiv = $("<div>"); //1st div
+    $NFTcardDiv.attr("id", "card-NFT");
+    $NFTcardDiv.addClass("card mb-3 card-max-width");
+
+    //Just adds a class for styling
+    var $rowDiv1 = $("<div>");
+    $NFTcardDiv.attr("id", "card-rowDiv");
+    $rowDiv1.addClass("row no-gutters");
+
+    //Will place an image for the NFT on this div
+    var $imageDiv = $("<div>");
+    $NFTcardDiv.attr("id", "card-image-div");
+    $imageDiv.addClass("col-md-4");
+    //add image to $imageDiv
+    var $curNFTimage = $("<img>");
+    $curNFTimage.attr("id", "card-image"); //Gonna Need
+    $curNFTimage.attr("src", "assets/images/card-placeholder.jpg");
+    $curNFTimage.attr("alt", "NFT-Placeholder Image");
+
+    //Just adds a class for styling
+    var $colDiv1 = $("<div>");
+    $colDiv1.attr("id", "card-colDiv");
+    $colDiv1.addClass("col-md-8");
+
+    //this is the div that that will contain the card-body elements
+    var $NFTcardBodyDiv = $("<div>");
+    $NFTcardBodyDiv.attr("id", "card-body");
+    $NFTcardBodyDiv.addClass("card-body");
+    // calls a helper function to add three individual pieces of the body
+    addBodyToNFTCards($NFTcardBodyDiv);
+
+    //APPEND CREATED ELEMENTS TO PARAMETER VARIABLE
+  }
+}
+
+//DONE: WRITE FUNCTION TO THAT ADDS AND CREATES THE BODIES OF THE CARDS
+function addBodyToNFTCards($currentCard) {
+  //creates the header for the card
+  var $cardBodyHeader = $("<h5>");
+  $cardBodyHeader.attr("id", "card-body-header");
+  $cardBodyHeader.addClass("card-title");
+  $cardBodyHeader.text("NFT-TITLE-FILLER");
+
+  //creates the first p in the NFT-card body
+  var $cardBodyP1 = $("<p>");
+  $cardBodyP1.attr("id", "card-body-para1");
+  $cardBodyP1.addClass("card-text");
+  $cardBodyP1.text("First paragraph of the NFT card body");
+
+  //creates the second p in the NFT-card body
+  var $cardBodyp2 = $("<p>");
+  $cardBodyP2.attr("id", "card-body-para2");
+  $cardBodyp2.addClass("card-text");
+  $cardBodyP2.text("Second pararaph of the NFT card body");
+
+  //append the created elements to the current NFT card
+  $currentCard.append("$cardBodyHeader");
+  $currentCard.append("$cardBodyP1");
+  $currentCard.append("$cardBodyP2");
 }
 
 //TODO(4): WRITE FUNCTION TO CREATE 'ROADMAP' SECTION
@@ -166,37 +232,6 @@ function removeContainerFromMain($curContainer) {
 function getCurrentContainer() {
   return $targetMainContainer.children();
 }
-
-//TODO: WRITE FUNCTION THAT CAN 'ADD' CARDS
-function createNFTDisplayCards() {
-  //gonna need to loop through the total number of NFTs
-  for (var i = 0; i < numNFTs; i++) {
-    //Biggest div -- is full card, will append all other divs
-    var $NFTcardDiv = $("<div>");
-    $NFTcardDiv.attr("id", "NFT-card");
-    $NFTcardDiv.addClass("card mb-3 card-max-width");
-
-    //Just adds a class for styling
-    var $rowDiv1 = $("<div>");
-    $NFTcardDiv.attr("id", "card-rowDiv");
-    $rowDiv1.addClass("row no-gutters");
-
-    //Will place an image for the NFT on this div
-    var $imageDiv = $("<div>");
-    $NFTcardDiv.attr("id", "card-image-div");
-    $imageDiv.addClass("col-md-4");
-    //add image to $imageDiv
-    var $curNFTimage = $("<img>");
-    $curNFTimage.attr("id", "NFT-${i}'"); //Gonna Need
-    console.log($curNFTimage.attr("id"));
-
-    var $colDiv1 = $("<div>");
-    var $NFTcardBodyDiv = $("<div>");
-  }
-}
-
-//TODO: WRITE FUNCTION TO THAT ADDS AND CREATES THE BODIES OF THE CARDS
-function addBodyToNFTCards() {}
 
 //USER INTERACTIONS
 //site navigation buttons
