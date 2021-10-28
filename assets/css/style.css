@@ -57,7 +57,7 @@ body {
 }
 
 .nav-item {
-    background-color: #283048;
+  background-color: #283048;
   background-image: linear-gradient(to top, #283048 25%, #859398 100%);
   background-size: 100%;
   display: flex;
@@ -69,7 +69,7 @@ body {
 
 .nav-link {
   background-color: #fff;
-  background-size: 100%;  
+  background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -77,8 +77,8 @@ body {
 }
 
 .nav-item:hover {
-	transform: scale(1.05);
-	transition: 0.2s ease-in;
+  transform: scale(1.05);
+  transition: 0.2s ease-in;
 }
 
 .btn-group {
@@ -121,16 +121,24 @@ body {
   position: absolute;
   height: 90%;
   background-color: #283048;
-  width: -webkit-fill-available;
+  width: 100%;
 }
 
 #home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #8e9eab;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 10px 10px 10px 10px;
   width: -webkit-fill-available;
   padding: 0px 20px;
@@ -147,14 +155,12 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 25px;
-
 }
 
 #home-container-right-column:hover {
-	transform: scale(1.015);
-	transition: 0.2s ease-in;
+  transform: scale(1.015);
+  transition: 0.2s ease-in;
 }
-
 
 #home-container-left-column {
   height: 90%;
@@ -166,8 +172,8 @@ body {
 }
 
 #home-container-left-column:hover {
-	transform: scale(1.015);
-	transition: 0.2s ease-in;
+  transform: scale(1.015);
+  transition: 0.2s ease-in;
 }
 
 #about-container {
