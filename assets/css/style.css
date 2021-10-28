@@ -40,7 +40,7 @@ body {
   max-width: 1300px;
 }
 
-#navbar-logo {
+#home-container-button {
   font-family: "Verdana", sans-serif;
   background-color: #283048;
   background-image: linear-gradient(to top, #283048 15%, #859398 100%);
@@ -56,7 +56,7 @@ body {
   font-size: 2.75rem;
 }
 
-.nav-item a {
+.nav-item {
   background-color: #283048;
   background-image: linear-gradient(to top, #283048 25%, #859398 100%);
   background-size: 100%;
@@ -103,41 +103,138 @@ body {
   width: 100%;
 }
 
+#main-container {
+  /* height: 90%; */
+  /* 1vh is 1% of the browser size. With 100vh you can fill the complete height */
+  /* if you want the div to fill not only the size of the browser, but */
+  /* the complete website then use this: */
+  position: absolute;
+  height: 90%;
+  background-color: #283048;
+  width: -webkit-fill-available;
+}
+
 #home-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #859398;
   margin: 10px 10px 10px 10px;
+  width: -webkit-fill-available;
 }
 
-#home-page-left-column {
-  background-color: lightgrey;
+#home-container-right-column {
+  height: 80%;
+  background-color: #ef3b36;
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#home-container-left-column {
+  height: 80%;
+  background-color: #ef3b36;
   margin-left: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-#home-page-right-column {
-  background-color: lightgrey;
-  margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-/* Sets the default visibilt for all non-home page containers */
 #about-container {
-  visibility: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #859398;
+  margin: 10px 10px 10px 10px;
+  width: -webkit-fill-available;
 }
 
 #rarity-container {
-  visibility: hidden;
+  background-color: #859398;
+  margin: 10px 10px 10px 10px;
+  width: -webkit-fill-available;
 }
 
-#roadmap-container {
-  visibility: hidden;
+html,
+body {
+  height: 100%;
 }
 
-#faq-container {
-  visibility: hidden;
+/* <div class="full-height">..</div> */
+
+/* Sets the default visibilt for all non-home container containers */
+#about-container-button {
+  background-color: transparent;
+}
+
+#rarity-container-button {
+  background-color: transparent;
+}
+
+#roadmap-container-button {
+  background-color: transparent;
+}
+
+#carouselExampleInterval {
+  display: flex;
+  align-items: stretch;
+}
+
+.margin-top-slideshow {
+  margin-top: 125px;
+}
+
+.wrapper {
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 50%;
+}
+
+#about-container-right-column {
+  height: 80%;
+  background-color: #ef3b36;
+  /* margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px; */
+}
+
+#about-container-left-column {
+  height: 80%;
+  background-color: #ef3b36;
+  /* margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px; */
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+#rarity-container-h1 {
+  /* Need this to be centered and in the middle of the div i created for it */
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 5px solid black;
+  width: 70%;
+}
+
+.card-max-width {
+  max-width: 540px;
 }
