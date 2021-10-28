@@ -18,7 +18,7 @@ var $aboutBtn = $("#about-container-button");
 var $rarityBtn = $("#rarity-container-button");
 var $roadmapBtn = $("#roadmap-container-button");
 
-var getContainer = "";
+var savedHomeContainer;
 
 //FUNCTIONS
 function connectPhantomWallet() {
@@ -35,18 +35,25 @@ function connectWallet_3() {
 
 /*TODO: WILL NEED FUNCTIONS TO CREATE AND ADD THE OTHER SECTIONS OF THE SITE AS THE USER CLICKS ON DIFFERENT OPTIONS TO NAV WITH NAVBARD*/
 //DONE(1): WRITE A FUNCTION TO CREATE 'HOME' SECTIONS
-function createHomeSection() {}
+function returnToHomeSection() {
+  //1st remove the current container from the main-container if you did not try to re-enter the same container
+  var $currentContainer = getCurrentContainer();
+  console.log($currentContainer);
+  if ($currentContainer.attr("id") == "home-container") {
+    return;
+  } else removeContainerFromMain($currentContainer);
+
+  //FINAL: append homeContainerDiv to the $container passed in
+  $targetMainContainer.append($targetHomeContainer);
+}
 
 //DONE(2): WRITE FUNCTION TO CREATE 'ABOUT' SECTION
 function createAboutSection() {
   //1st remove the current container from the main-container if you did not try to re-enter the same container
-  var currentContainer = getCurrentContainer();
-  console.log(currentContainer);
-  if (currentContainer === "about-container") {
+  var $currentContainer = getCurrentContainer();
+  if ($currentContainer.attr("id") === "about-container") {
     return;
-  }
-
-  removePreviousContainer();
+  } else removeContainerFromMain($currentContainer);
 
   //2nd create about-sub-container (biggest container)
   var $aboutContainerDiv = $("<div>"); //1.
@@ -127,26 +134,12 @@ function createRoadmapSection() {}
 function createFaqSection() {}
 
 //TODO: WRITE FUNCTION TO REMOVE THE CURRENT SUB-CONTAINER FROM THE MAIN-CONTAINER
-function removePreviousContainer() {
-  if ($targetMainContainer.children().attr("id") === "home-container") {
-    $targetHomeContainer.remove();
-  } else if ($targetMainContainer.children().attr("id") === "about-container") {
-    $targetAboutContainer.remove();
-  } else if (
-    $targetMainContainer.children().attr("id") === "rarity-container"
-  ) {
-    $targetRarityContainer.remove();
-  } else if (
-    $targetMainContainer.children().attr("id") === "roadmap-container"
-  ) {
-    $targetRoadmapContainer.remove();
-  } else {
-    alert("ERROR WITH WEBSITE");
-  }
+function removeContainerFromMain($curContainer) {
+  $curContainer.remove();
 }
 
 function getCurrentContainer() {
-  return $targetMainContainer.children().attr("id");
+  return $targetMainContainer.children();
 }
 
 //USER INTERACTIONS
@@ -157,5 +150,10 @@ connectPhantom.addEventListener("click", connectPhantomWallet);
 connectWallet2.addEventListener("click", connectWallet_2);
 connectWallet3.addEventListener("click", connectWallet_3);
 
-$homeBtn.on("click", createHomeSection);
+$homeBtn.on("click", returnToHomeSection);
 $aboutBtn.on("click", createAboutSection);
+
+$(document).ready(function () {
+  //save the home-container build from html file so we can just add back after switchings to different pages
+  // $savedHomeContainer = $targetHomeContainer;
+});
