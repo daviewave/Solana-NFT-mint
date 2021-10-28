@@ -45,8 +45,8 @@ body {
   background-color: #283048;
   background-image: linear-gradient(to top, #283048 15%, #859398 100%);
   background-size: 100%;
-  /* -webkit-background-clip: text;
-  -moz-background-clip: text; */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   display: flex;
@@ -56,12 +56,12 @@ body {
   font-size: 2.75rem;
 }
 
-.nav-item a {
+.nav-item {
   background-color: #283048;
   background-image: linear-gradient(to top, #283048 25%, #859398 100%);
   background-size: 100%;
-  /* -webkit-background-clip: text;
-  -moz-background-clip: text; */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   display: flex;
@@ -103,6 +103,17 @@ body {
   width: 100%;
 }
 
+#main-container {
+  /* height: 90%; */
+  /* 1vh is 1% of the browser size. With 100vh you can fill the complete height */
+  /* if you want the div to fill not only the size of the browser, but */
+  /* the complete website then use this: */
+  position: absolute;
+  height: 87%;
+  width: 100%;
+  background-color: #283048;
+}
+
 #home-container {
   display: flex;
   justify-content: space-evenly;
@@ -111,21 +122,32 @@ body {
   margin: 10px 10px 10px 10px;
 }
 
-#home-page-left-column {
+#home-container-left-column {
   background-color: lightgrey;
   margin-left: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-#home-page-right-column {
+#home-container-right-column {
   background-color: lightgrey;
   margin-left: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* Sets the default visibilt for all non-home page containers */
+html,
+body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/* <div class="full-height">..</div> */
+
+/* Sets the default visibilt for all non-home container containers */
 #about-container {
   visibility: hidden;
 }
@@ -142,9 +164,42 @@ body {
   visibility: hidden;
 }
 
+#about-container-button {
+  background-color: transparent;
+}
+
+#rarity-container-button {
+  background-color: transparent;
+}
+
+#roadmap-container-button {
+  background-color: transparent;
+}
+
+#carouselExampleInterval {
+  display: flex;
+  align-items: stretch;
+}
+
+.margin-top-slideshow {
+  margin-top: 125px;
+}
+
 .wrapper {
+  height: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
   width: 50%;
+}
+
+#home-container-right-column {
+  height: 80%;
+  background-color: #ef3b36;
+}
+
+#home-container-left-column {
+  height: 80%;
+  background-color: #ef3b36;
 }
