@@ -57,18 +57,28 @@ body {
 }
 
 .nav-item {
-  background-color: #283048;
+    background-color: #283048;
   background-image: linear-gradient(to top, #283048 25%, #859398 100%);
   background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
   display: flex;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.3rem;
+}
+
+.nav-link {
+  background-color: #fff;
+  background-size: 100%;  
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.nav-item:hover {
+	transform: scale(1.05);
+	transition: 0.2s ease-in;
 }
 
 .btn-group {
@@ -116,27 +126,48 @@ body {
 
 #home-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  background-color: #859398;
+  background: #8e9eab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 10px 10px 10px 10px;
   width: -webkit-fill-available;
+  padding: 0px 20px;
+  position: relative;
+  height: 97%;
+  transition: 0.3s ease-in;
+  flex-direction: row;
 }
 
 #home-container-right-column {
-  height: 80%;
+  height: 90%;
   background-color: #ef3b36;
   margin-left: 50px;
   margin-top: 15px;
   margin-bottom: 15px;
+  border-radius: 25px;
+
 }
 
+#home-container-right-column:hover {
+	transform: scale(1.015);
+	transition: 0.2s ease-in;
+}
+
+
 #home-container-left-column {
-  height: 80%;
+  height: 90%;
   background-color: #ef3b36;
-  margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+#home-container-left-column:hover {
+	transform: scale(1.015);
+	transition: 0.2s ease-in;
 }
 
 #about-container {
@@ -162,8 +193,10 @@ body {
 /* <div class="full-height">..</div> */
 
 /* Sets the default visibilt for all non-home container containers */
-#about-container-button {
-  background-color: transparent;
+/*#about-container-button {
+  background-color: #283048;
+  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
+  background-size: 100%;
 }
 
 #rarity-container-button {
@@ -172,7 +205,7 @@ body {
 
 #roadmap-container-button {
   background-color: transparent;
-}
+}*/
 
 #carouselExampleInterval {
   display: flex;
