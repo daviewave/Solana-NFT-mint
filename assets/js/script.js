@@ -84,25 +84,23 @@ function createAboutSection() {
 
 //DONE(2.A): CREATE THE LEFT COLUMN DIV THAT WILL HOLD CONTENTS FROM LEFT SIDE OF THE SCREEN
 function createLeftAboutColumn($columnDiv) {
-  //Creates elements to be added to leftColumnDiv
+  //Creates left column header element
   var $aboutLeftHeader = $("<h1>");
-  var $aboutLeftParagragh = $("<p>");
-
-  //add text to the elements created
+  $aboutLeftHeader.attr("id", "about-container-left-column-h1");
+  $aboutLeftHeader.addClass("text-center");
   $aboutLeftHeader.text("Get Cancelled?");
+
+  //Creates left column paragragh element
+  var $aboutLeftParagragh = $("<p>");
+  $aboutLeftParagragh.attr("id", "about-container-left-column-para");
+  $aboutLeftParagragh.addClass("text-center vertical-center");
   $aboutLeftParagragh.text(
     "All you wanted was to be free and identify as kangaroo and you were cancelled? all you did was say opera was annoying and ugly and you were cancelled"
   );
 
-  //add id's and classes
-  //TODO: IMPORTANT! ADD CLASSES IN CSS TO APPLY TO THESE
-  // $aboutLeftHeader.addClass("");
-  $aboutLeftHeader.attr("id", "about-container-left-column-h1");
-  $aboutLeftHeader.addClass("text-center");
-
-  // $aboutLeftParagragh.addClass("red");
-  $aboutLeftParagragh.attr("id", "about-container-left-column-p");
-  $aboutLeftParagragh.addClass("text-center vertical-center");
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  /* MIGHT WANT TO BUT ANOTHER DIV TO APPEND BOTH ON, THEN APPEND JUST THE 1 DIV TO THE ABOUT-CONTAINER */
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 
   //append new elements to the $columnDiv passed in as a argument
   $columnDiv.append($aboutLeftHeader);
@@ -123,7 +121,7 @@ function createRightAboutColumn($columnDiv) {
   $columnDiv.append($aboutRightParagragh);
 }
 
-//TODO(3): WRITE FUNCTION TO CREATE 'RARITY' SECTION
+//DONE(3): WRITE FUNCTION TO CREATE 'RARITY' SECTION
 function createRaritySection() {
   //1st remove the current container from the main-container if you did not try to re-enter the same container
   var $currentContainer = getCurrentContainer();
@@ -239,13 +237,43 @@ function addImageToNFTcard($imgDiv) {
   $curNFTimage.attr("id", "card-image"); //Gonna Need
   $curNFTimage.attr("src", "assets/images/card-placeholder2.jpg");
   $curNFTimage.attr("alt", "NFT-Placeholder Image");
-  $curNFTimage.addClass("card-img");
+  $curNFTimage.addClass("card-img ");
 
   $imgDiv.append($curNFTimage);
 }
 
 //TODO(4): WRITE FUNCTION TO CREATE 'ROADMAP' SECTION
-function createRoadmapSection() {}
+function createRoadmapSection() {
+  var $currentContainer = getCurrentContainer();
+  console.log($currentContainer);
+  if ($currentContainer.attr("id") === "roadmap-container") {
+    return;
+  } else removeContainerFromMain($currentContainer);
+  // //TODO: MAKE THE HEADER-DIV
+  $roadmapHeader = $("<h1>");
+  $roadmapHeader.attr("id", "roadmap-header");
+  $roadmapHeader.addClass("designing-border");
+  $roadmapHeader.text(
+    "GONNA GET TO SPACE ONE WAY OR ANOTHER, MIGHT AS WELL DO IT WITH DANNY DEVITO :)"
+  );
+
+  //TODO: MAKE THE BODY-DIV
+  var $roadmapBodyImg = $("<div>");
+  $roadmapBodyImg.addClass("designing-border");
+  var $roadMapImg = $("<img>");
+
+  $roadMapImg.attr("id", "roadmap-img");
+  $roadMapImg.attr("src", "assets/images/roadmap-placeholder.jpg");
+  $roadMapImg.addClass("designing-border");
+  $roadmapBodyImg.append($roadMapImg);
+
+  //TODO: MAKE THE CONTAINER-DIV TO STORE THE HEADER AND PARA
+  var $roadmapContainerDiv = $("<div>");
+  $roadmapContainerDiv.attr("id", "rarity-container");
+  $roadmapContainerDiv.append($roadmapHeader);
+  $roadmapContainerDiv.append($roadmapBodyImg);
+  $targetMainContainer.append($roadmapContainerDiv);
+}
 
 //TODO(5): WRITE FUNCTION TO CREATE 'FAQ' SECTION
 function createFaqSection() {}
@@ -260,6 +288,16 @@ function getCurrentContainer() {
   return $targetMainContainer.children();
 }
 
+//TODO (BONISH): DISPLAY TITLE TO THE NAVBAR BASED ON THE USERS CURRENT CONTAINER
+function displayCurrentContainerToNavbar() {
+  var $targetTitle = $("#current-container-title");
+  console.log($targetTitle);
+  var currentContainerID = getCurrentContainer().attr("id");
+  if (currentContainerID === "home-container") {
+    $targetTitle.text("NFT PROJECT TITLE");
+  }
+}
+
 //USER INTERACTIONS
 //site navigation buttons
 
@@ -271,7 +309,6 @@ connectWallet3.addEventListener("click", connectWallet_3);
 $homeBtn.on("click", returnToHomeSection);
 $aboutBtn.on("click", createAboutSection);
 $rarityBtn.on("click", createRaritySection);
+$roadmapBtn.on("click", createRoadmapSection);
 
-$(document).ready(function () {
-  //save the home-container build from html file so we can just add back after switchings to different pages
-});
+$(document).ready(function () {});

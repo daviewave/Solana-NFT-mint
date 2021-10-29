@@ -5,125 +5,152 @@
   font-family: "Courier New", sans-serif;
   scroll-behavior: smooth;
 }
-
+html,
 body {
-  background-color: #fff;
+  height: 100%;
 }
 
+/* NAVBAR STYLERS */
 .navbar {
-  background: #ef3b36; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #ffffff,
-    #ef3b36 85%
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #ffffff,
-    #ef3b36 85%
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
+  background: #ef3b36;
+  background: -webkit-linear-gradient(to left, #ffffff, #ef3b36 85%);
+  background: linear-gradient(to left, #ffffff, #ef3b36 85%);
+  height: 150px;
   position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.navbar-brand {
   display: flex;
   justify-content: space-between;
-  z-index: 1;
-  max-width: 1300px;
+  flex-direction: row;
+  border: 8px solid #283048;
 }
 
-#home-container-button {
-  font-family: "Verdana", sans-serif;
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 15%, #859398 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
+.d-btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
   cursor: pointer;
-  text-decoration: none;
-  font-size: 2.75rem;
+  background-color: #283048;
+  margin: 10px 10px 10px 10px;
+  border-radius: 25px;
+}
+.btn-two {
+  color: #fff;
+  transition: all 0.5s;
+  position: relative;
+  border-radius: 25px;
+}
+.btn-two span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.btn-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+.move-right {
+  float: right;
+}
+.move-left {
+  float: left;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.center-horizontal {
+  margin: auto;
+  width: 60%;
+  border: 5px solid #ffff00;
+  padding: 10px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.nav-item {
-  background-color: #283048;
+li {
+  display: inline;
+}
+.no-top-or-bottom {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#home-container-right-column-h1 {
+  margin-top: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 15px;
+  border: 5px solid yellow;
+}
+
+.li-btns {
   background-image: linear-gradient(to top, #283048 25%, #859398 100%);
   background-size: 100%;
-  display: flex;
+  display: inline-block;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.3rem;
+  min-width: 200px;
 }
-
-.nav-link {
-  background-color: #fff;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-
-.nav-item:hover {
-  transform: scale(1.05);
-  transition: 0.2s ease-in;
-}
-
-.btn-group {
+/*TODO(BONISH): FIX NAMING ON SOME OF THESE */
+.dropdown-items {
+  height: 33.33%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem;
 }
 
-.btn {
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-}
-
-.dropdown-menu {
-  text-align: center;
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-}
-
-.dropdown-menu #phantom-wallet {
-  width: 100%;
-}
-
-.dropdown-menu #wallet-2 {
-  width: 100%;
-}
-
-.dropdown-menu #wallet-3 {
+#connect-button {
+  padding: 25px;
   width: 100%;
 }
 
 #main-container {
-  /* height: 90%; */
-  /* 1vh is 1% of the browser size. With 100vh you can fill the complete height */
-  /* if you want the div to fill not only the size of the browser, but */
-  /* the complete website then use this: */
   position: absolute;
-  height: 90%;
+  height: 84.8%;
   background-color: #283048;
   width: 100%;
 }
 
+/* HOME CONTAINERS STYLINGS AND CLASSES */
 #home-container {
   display: flex;
   justify-content: center;
@@ -155,6 +182,9 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 #home-container-right-column:hover {
@@ -176,6 +206,23 @@ body {
   transition: 0.2s ease-in;
 }
 
+#home-container-button {
+  font-family: "Verdana", sans-serif;
+  background-color: #283048;
+  background-image: linear-gradient(to top, #283048 15%, #859398 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2.75rem;
+}
+
+/* ABOUT CONTAINERS STYLINGS AND CLASSES */
 #about-container {
   display: flex;
   justify-content: space-evenly;
@@ -185,15 +232,11 @@ body {
   width: -webkit-fill-available;
 }
 
+/* RARITY CONTAINERS STYLINGS AND CLASSES */
 #rarity-container {
   background-color: #859398;
   margin: 10px 10px 10px 10px;
   width: -webkit-fill-available;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 /* <div class="full-height">..</div> */
@@ -247,29 +290,6 @@ body {
   margin-bottom: 15px; */
 }
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-}
-
-.center-horizontal {
-  margin: auto;
-  width: 60%;
-  border: 5px solid #ffff00;
-  padding: 10px;
-}
-
 #rarity-container-h1 {
   /* Need this to be centered and in the middle of the div i created for it */
   display: flex;
@@ -298,4 +318,19 @@ body {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.designing-border {
+  border: 3px solid yellow;
+}
+
+#roadmap-img {
+  width: 100%;
+  height: 20p;
+  margin-left: auto;
+  margin-right: auto;
+}
+#roadmap-header {
+  display: flex;
+  justify-content: center;
 }
