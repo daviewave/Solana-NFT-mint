@@ -269,7 +269,7 @@ function createRoadmapSection() {
 
   //TODO: MAKE THE CONTAINER-DIV TO STORE THE HEADER AND PARA
   var $roadmapContainerDiv = $("<div>");
-  $roadmapContainerDiv.attr("id", "rarity-container");
+  $roadmapContainerDiv.attr("id", "roadmap-container");
   $roadmapContainerDiv.append($roadmapHeader);
   $roadmapContainerDiv.append($roadmapBodyImg);
   $targetMainContainer.append($roadmapContainerDiv);
