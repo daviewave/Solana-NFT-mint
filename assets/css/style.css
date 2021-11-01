@@ -1,3 +1,4 @@
+/* LARGE CONTAINER STYLERS */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,41 +6,246 @@
   font-family: "Courier New", sans-serif;
   scroll-behavior: smooth;
 }
-
+html,
 body {
-  background-color: #fff;
+  height: 100%;
+}
+#main-container {
+  position: absolute;
+  height: 84.8%;
+  background: -webkit-radial-gradient(to left, #ffffff, #ef3b36 85%);
+  background: radial-gradient(to left, #ffffff, #ef3b36 85%);  width: 100%;
+  border: 8px solid black;
+  background: rgb(56, 56, 56);
 }
 
+/* NAVBAR + NAVBAR BUTTON STYLERS */
 .navbar {
-  background: #ef3b36; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #ffffff,
-    #ef3b36 85%
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #ffffff,
-    #ef3b36 85%
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  height: 100px;
+  background: #ef3b36;
+  background: -webkit-radial-gradient(to left, #ffffff, #ef3b36 85%);
+  background: radial-gradient(to left, #ffffff, #ef3b36 85%);
+  height: 150px;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 8px solid black;
+}
+.d-btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  background-image: linear-gradient(to top, #f75959 25%, white 100%);
+  margin: 10px 10px 10px 10px;
+  border-radius: 25px;
+}
+.btn-two {
+  color: #fff;
+  transition: all 0.5s;
+  position: relative;
+  border-radius: 25px;
+}
+.btn-two span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.btn-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+.button1, .button1::after {
+  width: 380px;
+  height: 86px;
+  font-size: 36px;
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 88px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  cursor: grab;
+}
+.button1::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'AVAILABLE NOW';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+.button1:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.li-btns {
+  background-size: 100%;
+  display: inline-block;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3rem;
+  min-width: 350px;
+}
+#connect-button {
+  /* padding: 25px; */
+  width: 150%;
+  /* border: 3px solid blue; */
+  margin-right: 10px;
+  border: 1px solid black;
+}
+.dropdown-items {
+  /* height: */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
-.navbar-brand {
+/* SUB-CONTAINER STLYERS */
+.sub-container{
   display: flex;
-  justify-content: space-between;
-  z-index: 1;
-  max-width: 1300px;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-linear-gradient(to left, #ffffff, #ef3b36 85%);
+  background: linear-gradient(to left, #ffffff, #ef3b36 85%);
+  margin: 10px 10px 10px 10px;
+  width: -webkit-fill-available;
+  padding: 0px 20px;
+  position: relative;
+  transition: 0.3s ease-in;
+  flex-direction: row;
+}
+#roadmap-container{
+  flex-direction: column;
+}
+#rarity-container{
+  flex-direction: column;
 }
 
+/* COLUMN CONTAINERS WITHIN SUB-CONTAINER STYLERS */
+.column-containers{
+  height: 96%;
+  width: 85%;
+  background-color: #ef3b36;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 5px solid black;
+}
+
+/* HOME CONTAINER ELEMENT STYLERS */
+#home-container-right-column-h1 {
+  margin-top: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 15px;
+  border: 5px solid yellow;
+}
+#home-container-left-column:hover { 
+  transform: scale(1.015);
+  transition: 0.2s ease-in;
+} 
 #home-container-button {
   font-family: "Verdana", sans-serif;
   background-color: #283048;
@@ -55,221 +261,20 @@ body {
   text-decoration: none;
   font-size: 2.75rem;
 }
-
-.nav-item {
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-
-.nav-link {
-  background-color: #fff;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-
-.nav-item:hover {
-  transform: scale(1.05);
-  transition: 0.2s ease-in;
-}
-
-.btn-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.btn {
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-}
-
-.dropdown-menu {
-  text-align: center;
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-}
-
-.dropdown-menu #phantom-wallet {
-  width: 100%;
-}
-
-.dropdown-menu #wallet-2 {
-  width: 100%;
-}
-
-.dropdown-menu #wallet-3 {
-  width: 100%;
-}
-
-#main-container {
-  /* height: 90%; */
-  /* 1vh is 1% of the browser size. With 100vh you can fill the complete height */
-  /* if you want the div to fill not only the size of the browser, but */
-  /* the complete website then use this: */
-  position: absolute;
-  height: 90%;
-  background-color: #283048;
-  width: 100%;
-}
-
-#home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #eef2f3,
-    #8e9eab
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #eef2f3,
-    #8e9eab
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin: 10px 10px 10px 10px;
-  width: -webkit-fill-available;
-  padding: 0px 20px;
-  position: relative;
-  height: 97%;
-  transition: 0.3s ease-in;
-  flex-direction: row;
-}
-
-#home-container-right-column {
-  height: 90%;
-  background-color: #ef3b36;
-  margin-left: 50px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 25px;
-}
-
-#home-container-right-column:hover {
-  transform: scale(1.015);
-  transition: 0.2s ease-in;
-}
-
-#home-container-left-column {
-  height: 90%;
-  background-color: #ef3b36;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
-}
-
-#home-container-left-column:hover {
-  transform: scale(1.015);
-  transition: 0.2s ease-in;
-}
-
-#about-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #859398;
-  margin: 10px 10px 10px 10px;
-  width: -webkit-fill-available;
-}
-
-#rarity-container {
-  background-color: #859398;
-  margin: 10px 10px 10px 10px;
-  width: -webkit-fill-available;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-/* <div class="full-height">..</div> */
-
-/* Sets the default visibilt for all non-home container containers */
-/*#about-container-button {
-  background-color: #283048;
-  background-image: linear-gradient(to top, #283048 25%, #859398 100%);
-  background-size: 100%;
-}
-
-#rarity-container-button {
-  background-color: transparent;
-}
-
-#roadmap-container-button {
-  background-color: transparent;
-}*/
-
 #carouselExampleInterval {
   display: flex;
   align-items: stretch;
 }
-
 .margin-top-slideshow {
-  margin-top: 125px;
+  margin-top: 150px;
+}
+ 
+/* ABOUT CONTAINER ELEMENT STYLERS */
+#about-container-left-column-h1{
+  margin-top: 35px;
 }
 
-.wrapper {
-  height: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  width: 50%;
-}
-
-#about-container-right-column {
-  height: 80%;
-  background-color: #ef3b36;
-  /* margin-left: 50px;
-  margin-top: 15px;
-  margin-bottom: 15px; */
-}
-
-#about-container-left-column {
-  height: 80%;
-  background-color: #ef3b36;
-  /* margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px; */
-}
-
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-}
-
-.center-horizontal {
-  margin: auto;
-  width: 60%;
-  border: 5px solid #ffff00;
-  padding: 10px;
-}
-
+/* RARITY/COLLECTION CONTAINER ELEMENT STYLERS */
 #rarity-container-h1 {
   /* Need this to be centered and in the middle of the div i created for it */
   display: flex;
@@ -280,7 +285,6 @@ body {
   border: 5px solid black;
   width: 70%;
 }
-
 #NFT-cards-container {
   /* Need this to be centered and in the middle of the div i created for it */
   display: block;
@@ -292,10 +296,57 @@ body {
   border: 5px solid black;
   width: 90%;
 }
-
 .card-max-width {
   width: 95%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ROADMAP CONTAINER ELEMENT STYLERS */
+#roadmap-img {
+  display: flex;
+  width: 80%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#roadmap-header {
+  width: 70%;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+/* USEFUL STYLERS CREATED */
+.designing-border {
+  border: 3px solid yellow;
+}
+.move-right {
+  float: right;
+}
+.move-left {
+  float: left;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.center-horizontal {
+  margin: auto;
+  width: 60%;
+  border: 5px solid #ffff00;
+  padding: 10px;
+}
+.wrapper {
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 50%;
 }
