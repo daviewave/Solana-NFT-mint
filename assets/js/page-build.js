@@ -276,4 +276,8 @@ $aboutBtn.on("click", createAboutSection);
 $rarityBtn.on("click", createRaritySection);
 $roadmapBtn.on("click", createRoadmapSection);
 
-$(document).ready(function () {});
+$(document).ready(function () {
+  if (getCurrentContainer().attr("id") === "rarity-container") {
+    $targetMainContainer.addClass("rarity-height");
+  }
+});
